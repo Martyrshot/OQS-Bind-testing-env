@@ -167,7 +167,7 @@ for name_server in ns_data:
         zone = "root"
     else:
         zone = name_server["zone"][:-1]
-    docker_file = open("build/" + name_server["name"] + "/DockerFile", "a")
+    docker_file = open("build/" + name_server["name"] + "/Dockerfile", "a")
     docker_file.write("COPY db." + zone + " /usr/local/etc/bind/zones\n")
     if zone == "root":
         zone = "."
